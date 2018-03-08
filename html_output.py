@@ -15,7 +15,7 @@ class HtmlOutputer(object):
         # 全表删除
         # cursor.execute('TRUNCATE TABLE info')
         for value in data:
-            print(value)
+            # print(value)
             # info 是数据库里表的名字
             cursor.execute("""INSERT INTO info VALUE(%s, %s, %s, %s, %s)""", (value[0], value[1], value[2], value[3], value[4]))
             # cmd = "INSERT INTO activation_code VALUE(id = 0, %(activation_code)s)"

@@ -14,9 +14,10 @@ class HtmlDownloader(object):
             'Referer': r'http://www.zhipin.com/job_detail/',
             'Connection': 'keep-alive'
         }
-        r = requests.get(baseUrl, params=param, headers=header)
-        if r.status_code is 200:
-            # print(r.text)
+        try:
+            r = requests.get(baseUrl, params=param, headers=header)
             return r.text
-        else:
-            print('downloader error')
+        except Exception as err:
+            print(err)
+            print('爬取失败')
+            return None

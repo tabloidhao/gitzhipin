@@ -13,16 +13,7 @@ class BOSS_Main(object):
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.Html_parser()
         self.output = html_output.HtmlOutputer()
-        connect = pymysql.connect(host='localhost',
-                                  user='root',
-                                  passwd='199571',
-                                  db='zhipin',
-                                  charset='utf8')
-        # 创建游标
-        cursor = connect.cursor()
-        # 全表删除
-        # cursor.execute('TRUNCATE TABLE info')
-        connect.close()
+
 
     def start(self, keyword, baseURL, page_count):
         for i in range(1,page_count+1):
